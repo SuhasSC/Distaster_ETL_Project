@@ -79,7 +79,7 @@ Key analyses include:
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 disaster-etl-project/
 │
