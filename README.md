@@ -1,89 +1,81 @@
-# 🌍 Disaster Affected Region Tracker — ETL & SQL-First Analysis
+# Disaster Affected Region Tracker — ETL & SQL-First Analysis
 
-An end-to-end **ETL + SQL-first data analytics project** that processes raw disaster datasets and generates actionable insights for disaster management and policy planning.
-
----
-
-## 📌 Project Overview
-
-This project builds a complete data pipeline:
-
-**CSV → Pandas ETL → MySQL → SQL Analysis → Visualizations**
-
-It identifies:
-
-- Regions with the highest affected population
-- Most frequent disaster types
-- Disaster trends over time
-- Economic loss vs human impact
-- Region-wise disaster distribution
+This project implements an end-to-end ETL pipeline that processes raw disaster datasets and generates analytical insights to support disaster management and planning.
 
 ---
 
-## 🧰 Tech Stack
+## Project Overview
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- MySQL
-- SQLAlchemy
-- Jupyter Notebook
+The workflow follows a structured data pipeline:
 
----
+CSV → Pandas (ETL) → MySQL → SQL Analysis → Visualizations
 
-## ⚙️ ETL Pipeline
+The analysis focuses on:
 
-### 🔹 Extract
-- Loaded raw CSV datasets:
-  - Disaster events
-  - Impact assessment
-  - Regional data
-
-### 🔹 Transform (Business Rules Applied)
-
-- Missing disaster types → replaced with `"Unknown"`
-- Invalid dates → safely converted using `to_datetime(errors="coerce")`
-- Missing population → filled with median
-- Missing affected people & economic loss → replaced with `0`
-- Duplicate records removed
-- Datasets merged into a master table
-- Created time-based features:
-  - `year`
-  - `month`
-
-### 🔹 Load
-
-- Clean dataset stored in **MySQL**
-- All analysis performed using **SQL queries (SQL-first approach)**
+- Identifying regions with the highest affected population  
+- Finding the most frequent disaster types  
+- Understanding disaster trends over time  
+- Comparing economic loss with human impact  
+- Analyzing region-wise disaster distribution  
 
 ---
 
-## 📊 SQL-First Analysis
+## Tech Stack
 
-### 📍 Region with Highest Affected Population
-Identifies regions requiring priority disaster response.
-
-### 🌪️ Most Frequent Disaster Type
-Helps understand dominant disaster patterns.
-
-### 📈 Disaster Trend Over Time
-Tracks how disaster occurrences change across time.
-
-### 💰 Economic Loss vs Affected Population
-Compares financial impact with human impact.
-
-### 🔥 Region-wise Disaster Frequency Heatmap
-Shows disaster distribution across regions.
+- Python  
+- Pandas  
+- NumPy  
+- Matplotlib  
+- MySQL  
+- SQLAlchemy  
+- Jupyter Notebook  
 
 ---
 
-## 📈 Key Insights
+## ETL Pipeline
 
-- Region X has the highest affected population → needs priority relief planning
-- Floods are the most frequent disaster type
-- Disaster frequency increases after 2020
-- High economic loss events are not always high population impact
+### Extract
+Raw datasets were loaded from CSV files:
+- Disaster events  
+- Impact assessment  
+- Regional information  
+
+### Transform (Business Rules Applied)
+
+- Missing disaster types were replaced with `"Unknown"`  
+- Invalid dates were safely converted using `to_datetime(errors="coerce")`  
+- Missing population values were filled with the median  
+- Missing affected people and economic loss values were replaced with `0`  
+- Duplicate records were removed  
+- All datasets were merged into a single master table  
+- Time-based features were created (`year` and `month`)  
+
+### Load
+
+The cleaned dataset was stored in MySQL, and all analytical queries were performed directly using SQL.
+
+---
+
+## SQL-First Analysis
+
+The analysis was intentionally performed using SQL instead of Pandas groupby operations to reflect a production-style workflow.
+
+Key analyses include:
+
+- Region with the highest affected population  
+- Most frequent disaster type  
+- Disaster trend over time  
+- Economic loss vs affected population  
+- Region-wise disaster frequency heatmap  
+
+---
+
+## Key Insights
+
+- One region shows significantly higher affected population and should be prioritized for relief planning  
+- Floods are the most frequent disaster type in the dataset  
+- Disaster occurrences show an increasing trend after 2020  
+- High economic loss does not always correspond to high human impact  
 
 ---
 
@@ -100,9 +92,11 @@ disaster-etl-project/
 
 ---
 
-## 🚀 How to Run This Project
+---
 
-### 1️⃣ Clone the repository
+## How to Run the Project
+
+1. Clone the repository
 
 ```bash
 git clone https://github.com/SuhasSC/Distaster_ETL_Project.git
